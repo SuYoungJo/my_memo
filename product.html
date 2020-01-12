@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <!-- Webpage Title -->
+  <title>Hello, world!</title>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- JS -->		
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+  <style>
+    .wrap{
+      width: 900px;
+      margin: 0 auto;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+
+    }
+    .product{
+      width: 700px;
+      margin: 0 auto;
+    }
+    .product image{
+      width: 500px;
+    }
+    .product-image{
+      width: 100%;
+      height: 500px;
+    }
+    .product-title{
+      font-size: 30px;
+    }
+    .product-subtitle{
+      font-size: 12px;
+    }
+    .product-descript{
+      width: 100%;
+      text-align: center;
+    }
+    .product-form{
+      width: 80%;
+    }    
+    .form-submit{
+      margin: 20px auto ;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="product">
+      <img class="product-image" src="https://kr-media.apjonlinecdn.com/catalog/product/cache/b3b166914d87ce343d4dc5ec5117b502/c/y/cyprus_front_white_1.png" alt="Card image cap">
+      <div class="product-body">
+        <h5 class="product-title">노브툭을 팝니다. <span class="product-title product-subtitle">가격 : 1,500,000원 </span> </h5>
+        <p class="product-comment">고성능 게임과 다중 문서작업을 무리없이 작업할 수 있는 최신형 노트북입니다.</p>
+      </div>
+      <div class="product-descript">
+        <div class="product-form">
+          <label class="sr-only" for="inlineFormInputGroup">Username</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">주문자 이름</div>
+            </div>
+            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="이름">
+          </div>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">수량</div>
+            </div>
+            <select class="custom-select " id="inlineFormCustomSelect">
+              <option selected>Choose...</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">주소</div>
+            </div>
+            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="이름">
+          </div>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">전화번호</div>
+            </div>
+            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="이름">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">주문하기</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

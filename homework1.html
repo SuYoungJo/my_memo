@@ -71,7 +71,7 @@
         alert('주문자의 이름을 입력하세요.');
         $('#inputName').focus();
       }
-      else if($('#inputValue option:selected').val() == '--수량--')
+      else if($('#inputValue').val() == 0)
       {
         alert('수량을 입력하세요.');
         $('#inputValue').focus();
@@ -117,7 +117,7 @@
               <div class="input-group-text">수량</div>
             </div>
             <select class="custom-select " id="inputValue">
-              <option selected>--수량--</option>
+              <option value="0" selected>--수량--</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>

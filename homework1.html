@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <!-- Webpage Title -->
+  <title>Hello, world!</title>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- JS -->		
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+  <style>
+    .wrap{
+      width: 900px;
+      margin: 0 auto;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+
+    }
+    .product{
+      width: 700px;
+      margin: 0 auto;
+    }
+    .product image{
+      width: 500px;
+    }
+    .product-image{
+      width: 100%;
+      height: 500px;
+    }
+    .product-title{
+      font-size: 30px;
+    }
+    .product-subtitle{
+      font-size: 12px;
+    }
+    .product-descript{
+      width: 100%;
+      text-align: center;
+    }
+    .product-form{
+      width: 80%;
+    }    
+    .form-submit{
+      margin: 20px auto ;
+    }
+
+  </style>
+
+  <script type="text/javascript">
+    function order() {
+      //
+      // var regExp = /(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/g;
+      // var regExp = /(01[016789])[-](\d{4}|\d{3})[-]\d{4}$/g; 
+      var regExp =  /^(?:(010-\d{4})|(01[1|6|7|8|9]-\d{3,4}))-(\d{4})$/;
+
+
+      if($('#inputName').val() == '')
+      {
+        alert('주문자의 이름을 입력하세요.');
+        $('#inputName').focus();
+      }
+      else if($('#inputValue option:selected').val() == '--수량--')
+      {
+        alert('수량을 입력하세요.');
+        $('#inputValue').focus();
+      }
+      else if($('#inputAddress').val() == '')
+      {
+        alert('주소를 입력하세요.');
+        $('#inputAddress').focus();
+      }
+      else if(!regExp.test($('#inputPhoneNumber').val()))
+      {
+        alert('핸드폰번호를 입력하세요.');
+        $('#inputPhoneNumber').focus();
+      }
+      else
+      {
+        alert('주문완료');
+      }
+      console.log(regExp.test($('#inputPhoneNumber').val()));
+
+    }
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="product">
+      <img class="product-image" src="https://kr-media.apjonlinecdn.com/catalog/product/cache/b3b166914d87ce343d4dc5ec5117b502/c/y/cyprus_front_white_1.png" alt="Card image cap">
+      <div class="product-body">
+        <h5 class="product-title">노브툭을 팝니다. <span class="product-title product-subtitle">가격 : 1,500,000원 </span> </h5>
+        <p class="product-comment">고성능 게임과 다중 문서작업을 무리없이 작업할 수 있는 최신형 노트북입니다.</p>
+      </div>
+      <div class="product-descript">
+        <div class="product-form">
+          <label class="sr-only" for="inlineFormInputGroup">Username</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">주문자 이름</div>
+            </div>
+            <input type="text" class="form-control" id="inputName" placeholder="이름">
+          </div>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">수량</div>
+            </div>
+            <select class="custom-select " id="inputValue">
+              <option selected>--수량--</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">주소</div>
+            </div>
+            <input type="text" class="form-control" id="inputAddress" placeholder="주소">
+          </div>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">전화번호</div>
+            </div>
+            <input type="text" class="form-control" id="inputPhoneNumber" placeholder="휴대전화번호">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit" onclick="order()">주문하기</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

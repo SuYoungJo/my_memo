@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	
+	<script type="text/javascript">
+		function save_animal(){
+			let animal_name = $('#name').val();
+			let animal_count = $('#count').val();
+
+			$.ajax({
+				type: "POST",
+				url: "/save_animal",
+				data: { animal : animal_name, count : animal_count},
+				success:function(response){
+					console.log(response);
+					let result = response["result"]
+					let msg = response["msg"]
+
+					if (result == 1){
+						alert('저장에 성공했습니다.')
+					}else{
+						alert(msg)
+					}
+				}
+
+			})
+		}
+	</script>
+</head>
+<body>
+	<p>동물 : <input id="name"  type="text" name=""/></p>
+	<p>마리 : <input id="count" type="number" name=""/></p>
+	<button onclick="save_animal()">저장</button>
+	<br>
+	<a href="/count">동물 수 확인하러 가기</a>
+	<br>
+	<a href="/">홈페이</a>
+</body>
+</html>
